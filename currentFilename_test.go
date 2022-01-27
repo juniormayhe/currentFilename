@@ -3,9 +3,11 @@ package currentFilename
 import "testing"
 
 func TestGetCurrentFilename(t *testing.T) {
+	callerName := "currentFilename_test.go"
+
 	filename := GetCurrentFileName()
 
-	if filename != "currentFilename.go" {
-		t.Errorf("Expected filename to be 'currentFilename.go', got %s", filename)
+	if filename != callerName {
+		t.Errorf("Expected filename to be '%s', got %s", callerName, filename)
 	}
 }
